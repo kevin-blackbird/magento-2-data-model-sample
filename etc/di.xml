@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Blackbird\TeacherStudents\Api\Data\StudentInterface" type="Blackbird\TeacherStudents\Model\Student"/>
+    <preference for="Blackbird\TeacherStudents\Api\StudentRepositoryInterface" type="Blackbird\TeacherStudents\Model\StudentRepository"/>
+    <preference for="Blackbird\TeacherStudents\Api\Data\TeacherInterface" type="Blackbird\TeacherStudents\Model\Teacher"/>
+    <preference for="Blackbird\TeacherStudents\Api\TeacherRepositoryInterface" type="Blackbird\TeacherStudents\Model\TeacherRepository"/>
+
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Blackbird\TeacherStudents\Api\StudentRepositoryInterface" xsi:type="string">Blackbird\TeacherStudents\Api\StudentRepositoryInterface</item>
+                <item name="Blackbird\TeacherStudents\Api\TeacherRepositoryInterface" xsi:type="string">Blackbird\TeacherStudents\Api\TeacherRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Blackbird\TeacherStudents\Api\Data\StudentInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">blackbird_ts_student</item>
+                    <item name="identifierField" xsi:type="string">id_student</item>
+                </item>
+                <item name="Blackbird\TeacherStudents\Api\Data\TeacherInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">blackbird_ts_teacher</item>
+                    <item name="identifierField" xsi:type="string">id_teacher</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\EntityManager\Operation\ExtensionPool">
+        <arguments>
+            <argument name="extensionActions" xsi:type="array">
+                <item name="Blackbird\TeacherStudents\Api\Data\StudentInterface" xsi:type="array">
+                    <item name="read" xsi:type="array">
+                        <item name="studentReader" xsi:type="string">Blackbird\TeacherStudents\Model\ResourceModel\Student\Relation\ReadHandler</item>
+                    </item>
+                    <item name="create" xsi:type="array">
+                        <item name="studentCreator" xsi:type="string">Blackbird\TeacherStudents\Model\ResourceModel\Student\Relation\SaveHandler</item>
+                    </item>
+                    <item name="update" xsi:type="array">
+                        <item name="studentUpdater" xsi:type="string">Blackbird\TeacherStudents\Model\ResourceModel\Student\Relation\SaveHandler</item>
+                    </item>
+                </item>
+                <item name="Blackbird\TeacherStudents\Api\Data\TeacherInterface" xsi:type="array">
+                    <item name="read" xsi:type="array">
+                        <item name="teacherReader" xsi:type="string">Blackbird\TeacherStudents\Model\ResourceModel\Teacher\Relation\ReadHandler</item>
+                    </item>
+                    <item name="create" xsi:type="array">
+                        <item name="teacherCreator" xsi:type="string">Blackbird\TeacherStudents\Model\ResourceModel\Teacher\Relation\SaveHandler</item>
+                    </item>
+                    <item name="update" xsi:type="array">
+                        <item name="teacherUpdater" xsi:type="string">Blackbird\TeacherStudents\Model\ResourceModel\Teacher\Relation\SaveHandler</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\EntityManager\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="Blackbird\TeacherStudents\Api\Data\StudentInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+                <item name="Blackbird\TeacherStudents\Api\Data\TeacherInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
