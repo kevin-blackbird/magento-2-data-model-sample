@@ -1,19 +1,36 @@
 <?php
-
-namespace Blackbird\TeacherStudents\Model;
+/**
+ * Blackbird Data Model Sample Module
+ *
+ * NOTICE OF LICENSE
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to contact@bird.eu so we can send you a copy immediately.
+ *
+ * @category    Blackbird
+ * @package     Blackbird_DataModelSample
+ * @copyright   Copyright (c) 2018 Blackbird (https://black.bird.eu)
+ * @author      Blackbird Team
+ * @license     MIT
+ * @support     help@bird.eu
+ */
+namespace Blackbird\DataModelSample\Model;
 
 use Magento\Framework\Model\AbstractModel;
-use Blackbird\TeacherStudents\Api\Data\StudentInterface;
+use Blackbird\DataModelSample\Api\Data\StudentInterface;
 
 /**
  * Class Student
- * @package Blackbird\TeacherStudents\Model
+ * @package Blackbird\DataModelSample\Model
  */
 class Student extends AbstractModel implements StudentInterface
 {
+    /**
+     * {@inheritdoc}
+     */
     protected function _construct()
     {
-        $this->_init(\Blackbird\TeacherStudents\Model\ResourceModel\Student::class);
+        $this->_init(\Blackbird\DataModelSample\Model\ResourceModel\Student::class);
     }
 
     /**
@@ -21,7 +38,7 @@ class Student extends AbstractModel implements StudentInterface
      */
     public function getId()
     {
-        return $this->getData(self::ID);
+        return $this->_getData(self::ID);
     }
 
     /**
@@ -29,7 +46,7 @@ class Student extends AbstractModel implements StudentInterface
      */
     public function getName()
     {
-        return $this->getData(self::NAME);
+        return $this->_getData(self::NAME);
     }
 
     /**
@@ -37,7 +54,7 @@ class Student extends AbstractModel implements StudentInterface
      */
     public function getAge()
     {
-        return $this->getData(self::AGE);
+        return $this->_getData(self::AGE);
     }
 
     /**

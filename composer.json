@@ -1,15 +1,35 @@
 {
-    "name": "blackbird/data-model-sample",
-    "description": "",
-    "type": "magento2-module",
-    "version": "0.1.0",
+    "name": "blackbird/module-data-model-sample",
+    "description": "Sample module of a data model persistence implementation.",
+    "keywords": [        
+        "php",
+        "magento",
+        "magento2",
+        "sample",
+        "data model",
+        "persistence"
+    ],
     "require": {
-        "magento/magento-composer-installer": "*",
         "magento/framework": "101.*.*"
     },
+    "type": "magento2-module",
+    "version": "0.1.0",
     "license": [
-        "OSL-3.0"
+        "MIT"
     ],
+    "homepage": "https://github.com/blackbird-agency/magento-2-data-model-sample",
+    "authors": [
+        {
+            "name": "Blackbird Team",
+            "email": "hello@bird.eu",
+            "homepage": "https://black.bird.eu/",
+            "role": "lead"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/blackbird-agency/magento-2-data-model-sample",
+        "issues": "https://github.com/blackbird-agency/magento-2-data-model-sample/issues"
+    },
     "autoload": {
         "files": [
             "registration.php"

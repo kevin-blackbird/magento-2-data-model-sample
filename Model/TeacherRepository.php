@@ -1,30 +1,47 @@
 <?php
-
-namespace Blackbird\TeacherStudents\Model;
+/**
+ * Blackbird Data Model Sample Module
+ *
+ * NOTICE OF LICENSE
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to contact@bird.eu so we can send you a copy immediately.
+ *
+ * @category    Blackbird
+ * @package     Blackbird_DataModelSample
+ * @copyright   Copyright (c) 2018 Blackbird (https://black.bird.eu)
+ * @author      Blackbird Team
+ * @license     MIT
+ * @support     help@bird.eu
+ */
+namespace Blackbird\DataModelSample\Model;
 
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Blackbird\TeacherStudents\Api\Data;
-use Blackbird\TeacherStudents\Api\TeacherRepositoryInterface;
+use Blackbird\DataModelSample\Api\Data;
+use Blackbird\DataModelSample\Api\TeacherRepositoryInterface;
 
+/**
+ * Class TeacherRepository
+ * @package Blackbird\DataModelSample\Model
+ */
 class TeacherRepository implements TeacherRepositoryInterface
 {
     /**
-     * @var ResourceModel\Teacher
+     * @var \Blackbird\DataModelSample\Model\ResourceModel\Teacher
      */
-    protected $resourceTeacher;
+    private $resourceTeacher;
 
     /**
-     * @var Data\TeacherInterfaceFactory
+     * @var \Blackbird\DataModelSample\Api\Data\TeacherInterfaceFactory
      */
-    protected $teacherFactory;
+    private $teacherFactory;
 
     /**
-     * TeacherRepository constructor.
-     * @param ResourceModel\Teacher $resourceTeacher
-     * @param Data\TeacherInterfaceFactory $teacherFactory
+     * @param \Blackbird\DataModelSample\Model\ResourceModel\Teacher $resourceTeacher
+     * @param \Blackbird\DataModelSample\Api\Data\TeacherInterfaceFactory $teacherFactory
      */
-    function __construct(
+    public function __construct(
         ResourceModel\Teacher $resourceTeacher,
         Data\TeacherInterfaceFactory $teacherFactory
     ) {

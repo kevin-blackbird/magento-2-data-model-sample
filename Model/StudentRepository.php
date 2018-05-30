@@ -1,33 +1,46 @@
 <?php
-
-namespace Blackbird\TeacherStudents\Model;
+/**
+ * Blackbird Data Model Sample Module
+ *
+ * NOTICE OF LICENSE
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to contact@bird.eu so we can send you a copy immediately.
+ *
+ * @category    Blackbird
+ * @package     Blackbird_DataModelSample
+ * @copyright   Copyright (c) 2018 Blackbird (https://black.bird.eu)
+ * @author      Blackbird Team
+ * @license     MIT
+ * @support     help@bird.eu
+ */
+namespace Blackbird\DataModelSample\Model;
 
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Blackbird\TeacherStudents\Api\Data;
-use Blackbird\TeacherStudents\Api\StudentRepositoryInterface;
-use Blackbird\TeacherStudents\Model\ResourceModel;
+use Blackbird\DataModelSample\Api\Data;
+use Blackbird\DataModelSample\Api\StudentRepositoryInterface;
+use Blackbird\DataModelSample\Model\ResourceModel;
 
 /**
  * Class StudentRepository
- * @package Blackbird\TeacherStudents\Model
+ * @package Blackbird\DataModelSample\Model
  */
 class StudentRepository implements StudentRepositoryInterface
 {
     /**
-     * @var ResourceModel\Student
+     * @var \Blackbird\DataModelSample\Model\ResourceModel\Student
      */
-    protected $resourceStudent;
+    private $resourceStudent;
 
     /**
-     * @var Data\StudentInterfaceFactory
+     * @var \Blackbird\DataModelSample\Api\Data\StudentInterfaceFactory
      */
-    protected $studentFactory;
+    private $studentFactory;
 
     /**
-     * StudentRepository constructor.
-     * @param ResourceModel\Student $resourceStudent
-     * @param Data\StudentInterfaceFactory $studentFactory
+     * @param \Blackbird\DataModelSample\Model\ResourceModel\Student $resourceStudent
+     * @param \Blackbird\DataModelSample\Api\Data\StudentInterfaceFactory $studentFactory
      */
     function __construct(
         ResourceModel\Student $resourceStudent,
@@ -85,5 +98,4 @@ class StudentRepository implements StudentRepositoryInterface
     {
         return $this->delete($this->getById($studentId));
     }
-
 }

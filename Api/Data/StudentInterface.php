@@ -1,6 +1,20 @@
 <?php
-
-namespace Blackbird\TeacherStudents\Api\Data;
+/**
+ * Blackbird Data Model Sample Module
+ *
+ * NOTICE OF LICENSE
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to contact@bird.eu so we can send you a copy immediately.
+ *
+ * @category    Blackbird
+ * @package     Blackbird_DataModelSample
+ * @copyright   Copyright (c) 2018 Blackbird (https://black.bird.eu)
+ * @author      Blackbird Team
+ * @license     MIT
+ * @support     help@bird.eu
+ */
+namespace Blackbird\DataModelSample\Api\Data;
 
 /**
  * Interface StudentInterface
@@ -15,7 +29,7 @@ interface StudentInterface
     /**
      * Get Student ID
      *
-     * @return int mixed
+     * @return int
      */
     public function getId();
 
@@ -37,7 +51,7 @@ interface StudentInterface
      * Set Student ID
      *
      * @param int $id
-     * @return mixed
+     * @return \Blackbird\DataModelSample\Api\Data\StudentInterface
      */
     public function setId($id);
 
@@ -45,7 +59,7 @@ interface StudentInterface
      * Set Student Name
      *
      * @param string $name
-     * @return mixed
+     * @return \Blackbird\DataModelSample\Api\Data\StudentInterface
      */
     public function setName($name);
 
@@ -53,7 +67,7 @@ interface StudentInterface
      * Set Student Age
      *
      * @param int $age
-     * @return mixed
+     * @return \Blackbird\DataModelSample\Api\Data\StudentInterface
      */
     public function setAge($age);
 }

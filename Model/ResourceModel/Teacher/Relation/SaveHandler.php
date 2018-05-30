@@ -1,32 +1,45 @@
 <?php
-
-namespace Blackbird\TeacherStudents\Model\ResourceModel\Teacher\Relation;
+/**
+ * Blackbird Data Model Sample Module
+ *
+ * NOTICE OF LICENSE
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to contact@bird.eu so we can send you a copy immediately.
+ *
+ * @category    Blackbird
+ * @package     Blackbird_DataModelSample
+ * @copyright   Copyright (c) 2018 Blackbird (https://black.bird.eu)
+ * @author      Blackbird Team
+ * @license     MIT
+ * @support     help@bird.eu
+ */
+namespace Blackbird\DataModelSample\Model\ResourceModel\Teacher\Relation;
 
 use Magento\Framework\EntityManager\MetadataPool;
 use Magento\Framework\EntityManager\Operation\ExtensionInterface;
-use Blackbird\TeacherStudents\Api\Data\TeacherInterface;
-use Blackbird\TeacherStudents\Model\ResourceModel\Teacher;
+use Blackbird\DataModelSample\Api\Data\TeacherInterface;
+use Blackbird\DataModelSample\Model\ResourceModel\Teacher;
 
 /**
  * Class SaveHandler
- * @package Blackbird\TeacherStudents\Model\ResourceModel\Teacher\Relation
+ * @package Blackbird\DataModelSample\Model\ResourceModel\Teacher\Relation
  */
 class SaveHandler implements ExtensionInterface
 {
     /**
-     * @var MetadataPool
+     * @var \Magento\Framework\EntityManager\MetadataPool
      */
-    protected $metadataPool;
+    private $metadataPool;
 
     /**
-     * @var Teacher
+     * @var \Blackbird\DataModelSample\Model\ResourceModel\Teacher
      */
-    protected $resourceTeacher;
+    private $resourceTeacher;
 
     /**
-     * SaveHandler constructor.
-     * @param MetadataPool $metadataPool
-     * @param Teacher $resourceTeacher
+     * @param \Magento\Framework\EntityManager\MetadataPool $metadataPool
+     * @param \Blackbird\DataModelSample\Model\ResourceModel\Teacher $resourceTeacher
      */
     public function __construct(
         MetadataPool $metadataPool,
@@ -37,10 +50,7 @@ class SaveHandler implements ExtensionInterface
     }
 
     /**
-     * @param object $entity
-     * @param array $arguments
-     * @return object
-     * @throws \Exception
+     * {@inheritdoc}
      */
     public function execute($entity, $arguments = [])
     {

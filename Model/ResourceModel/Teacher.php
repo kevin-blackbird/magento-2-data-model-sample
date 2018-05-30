@@ -1,37 +1,49 @@
 <?php
-
-namespace Blackbird\TeacherStudents\Model\ResourceModel;
-
+/**
+ * Blackbird Data Model Sample Module
+ *
+ * NOTICE OF LICENSE
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to contact@bird.eu so we can send you a copy immediately.
+ *
+ * @category    Blackbird
+ * @package     Blackbird_DataModelSample
+ * @copyright   Copyright (c) 2018 Blackbird (https://black.bird.eu)
+ * @author      Blackbird Team
+ * @license     MIT
+ * @support     help@bird.eu
+ */
+namespace Blackbird\DataModelSample\Model\ResourceModel;
 
 use Magento\Framework\EntityManager\EntityManager;
 use Magento\Framework\EntityManager\MetadataPool;
 use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\Model\ResourceModel\Db\Context;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
-use Blackbird\TeacherStudents\Api\Data\TeacherInterface;
+use Blackbird\DataModelSample\Api\Data\TeacherInterface;
 
 /**
  * Class Teacher
- * @package Blackbird\TeacherStudents\Model\ResourceModel
+ * @package Blackbird\DataModelSample\Model\ResourceModel
  */
 class Teacher extends AbstractDb
 {
     /**
-     * @var MetadataPool
+     * @var \Magento\Framework\EntityManager\MetadataPool
      */
-    protected $metadataPool;
+    private $metadataPool;
 
     /**
-     * @var EntityManager
+     * @var \Magento\Framework\EntityManager\EntityManager
      */
-    protected $entityManager;
+    private $entityManager;
 
     /**
-     * Teacher constructor.
-     * @param Context $context
-     * @param MetadataPool $metadataPool
-     * @param EntityManager $entityManager
-     * @param null $connectionName
+     * @param \Magento\Framework\Model\ResourceModel\Db\Context $context
+     * @param \Magento\Framework\EntityManager\MetadataPool $metadataPool
+     * @param \Magento\Framework\EntityManager\EntityManager $entityManager
+     * @param string|null $connectionName
      */
     public function __construct(
         Context $context,
@@ -45,7 +57,7 @@ class Teacher extends AbstractDb
     }
 
     /**
-     * Set the table and the primary key
+     * {@inheritdoc}
      */
     protected function _construct()
     {
