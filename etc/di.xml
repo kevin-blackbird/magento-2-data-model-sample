@@ -26,8 +26,8 @@
     <type name="Magento\Framework\Model\Entity\RepositoryFactory">
         <arguments>
             <argument name="entities" xsi:type="array">
-                <item name="Blackbird\DataModelSample\Api\StudentRepositoryInterface" xsi:type="string">Blackbird\DataModelSample\Api\StudentRepositoryInterface</item>
-                <item name="Blackbird\DataModelSample\Api\TeacherRepositoryInterface" xsi:type="string">Blackbird\DataModelSample\Api\TeacherRepositoryInterface</item>
+                <item name="Blackbird\DataModelSample\Api\StudentInterface" xsi:type="string">Blackbird\DataModelSample\Api\StudentRepositoryInterface</item>
+                <item name="Blackbird\DataModelSample\Api\TeacherInterface" xsi:type="string">Blackbird\DataModelSample\Api\TeacherRepositoryInterface</item>
             </argument>
         </arguments>
     </type>
